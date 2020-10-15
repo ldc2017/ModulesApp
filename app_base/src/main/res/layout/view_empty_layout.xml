@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="@dimen/dp_200"
+        android:layout_height="@dimen/dp_200"
+        android:layout_gravity="center"
+        android:src="@drawable/icon_empty_data" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="100dp"
+        android:lines="1"
+        android:singleLine="true"
+        android:text="暂无数据···"
+        android:textColor="@color/color_8a8a8a"
+        android:textSize="@dimen/sp_20" />
+
+</FrameLayout>

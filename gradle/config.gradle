@@ -1,0 +1,44 @@
+import java.text.SimpleDateFormat
+
+project.ext {
+
+    //渠道
+    flavorDimensions = "BleApp"
+    //版本
+    android = [
+            compileSdkVersion: 30,
+            buildToolsVersion: "30.0.2",
+            minSdkVersion    : 19,
+            targetSdkVersion : 30,
+            versionCode      : 1,
+            versionName      : "1.0",
+    ]
+
+    //依赖
+    depend = [
+            //common
+            appcompat             : "androidx.appcompat:appcompat:1.2.0",
+            constraintlayout      : "androidx.constraintlayout:constraintlayout:2.0.2",
+            supportV4             : "androidx.legacy:legacy-support-v4:1.0.0",
+            recyclerview          : "androidx.recyclerview:recyclerview:1.1.0",
+            junit                 : "junit:junit:4.13",
+            textJunit             : "androidx.test.ext:junit:1.1.2",
+            espressoCore          : "androidx.test.espresso:espresso-core:3.3.0",
+            multidex              : "com.android.support:multidex:1.0.3",
+            //
+            utilcodex             : 'com.blankj:utilcodex:1.29.0',
+            // 替换成最新版本, 需要注意的是api
+            // 要与compiler匹配使用，均使用最新版可以保证兼容
+            arouterApi            : 'com.alibaba:arouter-api:1.5.0',
+            arouterCompiler       : 'com.alibaba:arouter-compiler:1.2.2',
+            //屏幕适配
+            autoSize              : 'me.jessyan:autosize:1.2.1',
+            //
+            retrofit2ConverterGson: 'com.squareup.retrofit2:converter-gson:2.9.0',
+            retrofit2             : 'com.squareup.retrofit2:retrofit:2.9.0',
+            retrofit2RxJava2      : 'com.squareup.retrofit2:adapter-rxjava2:2.9.0',
+
+
+    ]
+}
+

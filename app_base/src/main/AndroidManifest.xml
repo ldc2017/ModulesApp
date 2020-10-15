@@ -1,0 +1,10 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.ldc.app_base">
+
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <application>
+        <service
+            android:name=".ThirdSDKService"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+    </application>
+</manifest>

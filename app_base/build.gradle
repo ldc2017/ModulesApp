@@ -1,0 +1,68 @@
+apply plugin: 'com.android.library'
+
+android {
+
+    compileSdkVersion rootProject.ext.android['compileSdkVersion']
+    buildToolsVersion rootProject.ext.android['buildToolsVersion']
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.android['minSdkVersion']
+        targetSdkVersion rootProject.ext.android['targetSdkVersion']
+        versionCode rootProject.ext.android['versionCode']
+        versionName rootProject.ext.android['versionName']
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+
+        //路由设置
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
+    }
+    buildTypes {
+        debug {
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    //数据绑定
+    buildFeatures {
+        viewBinding {
+            enabled = true
+        }
+    }
+
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    api fileTree(dir: "libs", include: ["*.jar"])
+    api rootProject.ext.depend['appcompat']
+    api rootProject.ext.depend['constraintlayout']
+    api rootProject.ext.depend['supportV4']
+    api rootProject.ext.depend['recyclerview']
+    testApi rootProject.ext.depend['junit']
+    androidTestApi rootProject.ext.depend['textJunit']
+    androidTestApi rootProject.ext.depend['espressoCore']
+    //
+    api rootProject.ext.depend['multidex']
+    api rootProject.ext.depend['utilcodex']
+    //路由
+    api rootProject.ext.depend['arouterApi']
+    annotationProcessor rootProject.ext.depend['arouterCompiler']
+    //
+    api rootProject.ext.depend['autoSize']
+    api rootProject.ext.depend['retrofit2']
+    api rootProject.ext.depend['retrofit2ConverterGson']
+    api rootProject.ext.depend['retrofit2RxJava2']
+
+}
+

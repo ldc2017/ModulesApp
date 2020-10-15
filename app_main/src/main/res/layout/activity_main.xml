@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_fafafa"
+    android:orientation="vertical"
+    android:weightSum="1"
+    tools:context=".action.activity.MainActivity">
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/vp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/color_ededed" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_60"
+        android:background="@color/color_ffffff"
+        android:gravity="center_vertical">
+
+        <FrameLayout
+            android:id="@+id/fl_home"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:paddingTop="@dimen/dp_5">
+
+            <ImageView
+                android:id="@+id/iv_home"
+                android:layout_width="@dimen/dp_23"
+                android:layout_height="@dimen/dp_23"
+                android:layout_gravity="center_horizontal"
+                android:scaleType="centerCrop"
+                android:src="@drawable/icon_home" />
+
+            <TextView
+                android:id="@+id/tv_home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|bottom"
+                android:layout_marginTop="5dp"
+                android:text="首页"
+                android:textColor="@color/color_8a8a8a"
+                android:textSize="@dimen/sp_13" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/fl_message"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:paddingTop="@dimen/dp_5">
+
+            <ImageView
+                android:id="@+id/iv_message"
+                android:layout_width="@dimen/dp_23"
+                android:layout_height="@dimen/dp_23"
+                android:layout_gravity="center_horizontal"
+                android:scaleType="centerCrop"
+                android:src="@drawable/icon_message" />
+
+            <TextView
+                android:id="@+id/tv_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|bottom"
+                android:layout_marginTop="5dp"
+                android:text="消息"
+                android:textColor="@color/color_8a8a8a"
+                android:textSize="@dimen/sp_13" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/fl_me"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:paddingTop="@dimen/dp_5">
+
+            <ImageView
+                android:id="@+id/iv_me"
+                android:layout_width="@dimen/dp_23"
+                android:layout_height="@dimen/dp_23"
+                android:layout_gravity="center_horizontal"
+                android:scaleType="centerInside"
+                android:src="@drawable/icon_personal" />
+
+            <TextView
+                android:id="@+id/tv_me"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|bottom"
+                android:layout_marginTop="@dimen/dp_5"
+                android:text="个人中心"
+                android:textColor="@color/color_8a8a8a"
+                android:textSize="@dimen/sp_13" />
+
+        </FrameLayout>
+
+
+    </LinearLayout>
+</LinearLayout>

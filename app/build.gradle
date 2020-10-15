@@ -1,0 +1,113 @@
+import java.text.SimpleDateFormat
+
+if (isModuleRun.toBoolean()) {
+    apply plugin: 'com.android.application'
+} else {
+    apply plugin: 'com.android.library'
+}
+//获取日期
+static def getTime(s) {
+    SimpleDateFormat sdf = new SimpleDateFormat(s, Locale.CHINA)
+    return sdf.format(new Date())
+}
+//编译时间
+static def buildTime() {
+    return getTime("yyyyMMddHHmmss")
+}
+
+android {
+    compileSdkVersion rootProject.ext.android['compileSdkVersion']
+    buildToolsVersion rootProject.ext.android['buildToolsVersion']
+    defaultConfig {
+        if (isModuleRun.toBoolean()) {
+            applicationId "com.ldc.bleapp"
+        }
+        minSdkVersion rootProject.ext.android['minSdkVersion']
+        targetSdkVersion rootProject.ext.android['targetSdkVersion']
+        versionCode rootProject.ext.android['versionCode']
+        versionName rootProject.ext.android['versionName']
+
+        multiDexEnabled true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        //路由设置
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
+    }
+
+    //配置签名
+    signingConfigs {
+        ldc {
+            keyAlias 'android'
+            keyPassword '123456'
+            storeFile file('E:\\androidJKS\\android.keystore')
+            storePassword '123456'
+        }
+    }
+
+    //渠道
+    flavorDimensions rootProject.ext.flavorDimensions
+    // 渠道包定义，默认定义的名称就是渠道名称
+    productFlavors {
+        // 开发版
+        Dev {
+            manifestPlaceholders = [
+                    "app_name"  : "蓝牙测试版",
+                    "app_icon"  : "@mipmap/ic_launcher",
+                    "app_icon_r": "@mipmap/ic_launcher_round",
+            ]
+        }
+        // 正式版
+        Prod {
+            manifestPlaceholders = [
+                    "app_name"  : "蓝牙快传",
+                    "app_icon"  : "@mipmap/ic_launcher",
+                    "app_icon_r": "@mipmap/ic_launcher_round",
+            ]
+        }
+    }
+    //编译类型
+    buildTypes {
+        debug {
+            applicationIdSuffix ".dev"
+            signingConfig signingConfigs.ldc
+        }
+        release {
+            minifyEnabled true //启用Proguard
+            // shrinkResources true //是否清理无用资源,依赖于minifyEnabled
+            zipAlignEnabled true //是否启用zipAlign压缩
+            minifyEnabled false
+            signingConfig signingConfigs.ldc
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    sourceSets {
+        main {
+            if (!isModuleRun.toBoolean()) {
+                manifest.srcFile 'src/main/manifest/AndroidManifest.xml'
+            }
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+
+    //路由
+    annotationProcessor rootProject.ext.depend['arouterCompiler']
+    implementation project(path: ":app_base")
+    if (isModuleRun.toBoolean()) {
+        implementation project(path: ":app_main")
+    }
+
+}
