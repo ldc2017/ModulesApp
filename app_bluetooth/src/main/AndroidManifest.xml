@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.ldc.app_bluetooth">
+
+    <application android:theme="@style/AppTheme">
+        <activity android:name=".action.BlueToothActivity" />
+    </application>
+
+</manifest>

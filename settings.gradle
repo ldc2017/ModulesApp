@@ -1,3 +1,4 @@
+include ':app_bluetooth'
 include ':app_main'
 include ':app_base'
 include ':app'

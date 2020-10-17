@@ -6,7 +6,7 @@ package com.ldc.app_base.uts;
  * 作者: liudi
  * 创建时间: 2020/10/14
  */
-public final class JumpUrl {
+public class JumpUrl {
 
     public static final String MainGroup = "/main";
     //
