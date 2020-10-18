@@ -20,12 +20,6 @@ android {
         multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
-        //路由设置
-        javaCompileOptions {
-            annotationProcessorOptions {
-                arguments = [AROUTER_MODULE_NAME: project.getName()]
-            }
-        }
     }
 
     buildTypes {
@@ -44,9 +38,7 @@ android {
     }
     //数据绑定
     buildFeatures {
-        viewBinding {
-            enabled = true
-        }
+        viewBinding = true
     }
 
     compileOptions {
@@ -57,9 +49,13 @@ android {
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
+    testImplementation 'junit:junit:4.13'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     implementation project(path: ":app_base")
-    //路由
-    annotationProcessor rootProject.ext.depend['arouterCompiler']
-    implementation project(path: ":app_bluetooth")
+    if (isModuleRun.toBoolean()) {
+        implementation project(path: ":app_bluetooth")
+        implementation project(path: ":app_wifi")
+    }
 
 }

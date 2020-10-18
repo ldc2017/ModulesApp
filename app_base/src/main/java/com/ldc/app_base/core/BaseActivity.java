@@ -8,7 +8,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.blankj.utilcode.util.BarUtils;
-import com.ldc.app_base.config.ModuleConfig;
+import com.ldc.app_base.config.ModuleAppInit;
 
 import me.jessyan.autosize.internal.CustomAdapt;
 
@@ -66,11 +66,11 @@ public abstract class BaseActivity extends AppCompatActivity implements CustomAd
 
     @Override
     public boolean isBaseOnWidth() {
-        return ModuleConfig.isBaseOnWidth;
+        return ModuleAppInit.isBaseOnWidth;
     }
 
     @Override
     public float getSizeInDp() {
-        return ModuleConfig.getSizeInDp;
+        return ModuleAppInit.getSizeInDp;
     }
 }

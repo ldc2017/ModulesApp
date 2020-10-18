@@ -10,7 +10,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.viewbinding.ViewBinding;
 
-import com.ldc.app_base.config.ModuleConfig;
+import com.ldc.app_base.config.ModuleAppInit;
 
 import me.jessyan.autosize.internal.CustomAdapt;
 
@@ -57,11 +57,11 @@ public abstract class BaseVBFragment<VB extends ViewBinding> extends Fragment im
 
     @Override
     public boolean isBaseOnWidth() {
-        return ModuleConfig.isBaseOnWidth;
+        return ModuleAppInit.isBaseOnWidth;
     }
 
     @Override
     public float getSizeInDp() {
-        return ModuleConfig.getSizeInDp;
+        return ModuleAppInit.getSizeInDp;
     }
 }

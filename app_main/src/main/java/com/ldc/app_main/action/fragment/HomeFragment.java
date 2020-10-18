@@ -4,9 +4,8 @@ import android.os.Bundle;
 
 import androidx.lifecycle.ViewModelProvider;
 
-import com.alibaba.android.arouter.launcher.ARouter;
 import com.ldc.app_base.core.BaseVMFragment;
-import com.ldc.app_bluetooth.MyUrl;
+import com.ldc.app_bluetooth.action.BlueToothActivity;
 import com.ldc.app_main.action.vm.HomeVM;
 import com.ldc.app_main.databinding.FragmentHomeBinding;
 
@@ -41,7 +40,7 @@ public class HomeFragment extends BaseVMFragment<HomeVM, FragmentHomeBinding> {
     protected void initView() {
         super.initView();
         viewBinding.btnClick.setOnClickListener(v -> {
-            ARouter.getInstance().build(MyUrl.BlueToothActivity).navigation(getContext());
+            BlueToothActivity.start(getContext());
         });
     }
 }

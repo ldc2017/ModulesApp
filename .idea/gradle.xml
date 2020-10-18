@@ -15,6 +15,7 @@
             <option value="$PROJECT_DIR$/app_base" />
             <option value="$PROJECT_DIR$/app_bluetooth" />
             <option value="$PROJECT_DIR$/app_main" />
+            <option value="$PROJECT_DIR$/app_wifi" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

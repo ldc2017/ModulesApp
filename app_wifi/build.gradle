@@ -1,7 +1,9 @@
-apply plugin: 'com.android.library'
-
+if (isModuleRun.toBoolean()) {
+    apply plugin: 'com.android.library'
+} else {
+    apply plugin: 'com.android.application'
+}
 android {
-
     compileSdkVersion rootProject.ext.android['compileSdkVersion']
     buildToolsVersion rootProject.ext.android['buildToolsVersion']
 
@@ -10,23 +12,25 @@ android {
         targetSdkVersion rootProject.ext.android['targetSdkVersion']
         versionCode rootProject.ext.android['versionCode']
         versionName rootProject.ext.android['versionName']
+        if (!isModuleRun.toBoolean()) {
+            applicationId 'com.ldc.app_wifi'
+        }
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
     }
+
     buildTypes {
-        debug {
-        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
     //数据绑定
     buildFeatures {
         viewBinding = true
     }
-
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -35,19 +39,11 @@ android {
 }
 
 dependencies {
-    api fileTree(dir: "libs", include: ["*.jar"])
-    api rootProject.ext.depend['appcompat']
-    api rootProject.ext.depend['constraintlayout']
-    api rootProject.ext.depend['supportV4']
-    api rootProject.ext.depend['recyclerview']
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    testImplementation 'junit:junit:4.13'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     //
-    api rootProject.ext.depend['multidex']
-    api rootProject.ext.depend['utilcodex']
-    //
-    api rootProject.ext.depend['autoSize']
-    api rootProject.ext.depend['retrofit2']
-    api rootProject.ext.depend['retrofit2ConverterGson']
-    api rootProject.ext.depend['retrofit2RxJava2']
+    implementation project(path: ":app_base")
 
 }
-

@@ -1,21 +1,22 @@
-package com.ldc.app_bluetooth;
+package com.ldc.app_main;
 
 import android.app.Application;
 
 import com.ldc.app_base.init.BaseAppInit;
 
 /**
- * 项目: ModulesApp
- * 包名: com.ldc.app_bluetooth
+ * 项目: BleApp
+ * 包名: com.ldc.app_main
  * 作者: liudi
- * 创建时间: 2020/10/17
+ * 创建时间: 2020/10/10
  */
-public class BluetoothAppInit implements BaseAppInit {
+public class AppInit implements BaseAppInit {
     private static Application application;
 
     public static Application getApplication() {
         return application;
     }
+
 
     /**
      * @param app

@@ -7,7 +7,7 @@ import android.os.Looper;
 
 import androidx.multidex.MultiDex;
 
-import com.ldc.app_base.config.ModuleConfig;
+import com.ldc.app_base.config.ModuleAppInit;
 import com.ldc.app_base.init.BaseAppInit;
 
 /**
@@ -45,7 +45,7 @@ public abstract class BaseApplication extends Application {
     //高优先级
     protected void moduleAppInit() {
         try {
-            for (String init : ModuleConfig.modulesInits) {
+            for (String init : ModuleAppInit.modulesInit) {
                 Class<?> clazz = Class.forName(init);
                 BaseAppInit baseAppInit = (BaseAppInit) clazz.newInstance();
                 baseAppInit.init(this);

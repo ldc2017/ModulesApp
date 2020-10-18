@@ -6,7 +6,6 @@ import android.content.Intent;
 import androidx.annotation.NonNull;
 import androidx.core.app.JobIntentService;
 
-import com.alibaba.android.arouter.launcher.ARouter;
 import com.blankj.utilcode.util.Utils;
 
 /**
@@ -29,11 +28,6 @@ public class ThirdSDKService extends JobIntentService {
     @Override
     protected void onHandleWork(@NonNull Intent intent) {
         try {
-            if (BuildConfig.DEBUG) {
-                ARouter.openLog();     // 打印日志
-                ARouter.openDebug();   // 开启调试模式(如果在InstantRun模式下运行，必须开启调试模式！线上版本需要关闭,否则有安全风险)
-            }
-            ARouter.init(getApplication());
             Utils.init(getApplication());
         } catch (Exception e) {
             System.err.println(String.format("初始化异常 ： %s", e.getLocalizedMessage()));

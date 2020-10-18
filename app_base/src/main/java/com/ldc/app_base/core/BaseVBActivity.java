@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewbinding.ViewBinding;
 
 import com.blankj.utilcode.util.BarUtils;
-import com.ldc.app_base.config.ModuleConfig;
+import com.ldc.app_base.config.ModuleAppInit;
 
 import me.jessyan.autosize.internal.CustomAdapt;
 
@@ -69,11 +69,11 @@ public abstract class BaseVBActivity<VB extends ViewBinding> extends AppCompatAc
 
     @Override
     public boolean isBaseOnWidth() {
-        return ModuleConfig.isBaseOnWidth;
+        return ModuleAppInit.isBaseOnWidth;
     }
 
     @Override
     public float getSizeInDp() {
-        return ModuleConfig.getSizeInDp;
+        return ModuleAppInit.getSizeInDp;
     }
 }

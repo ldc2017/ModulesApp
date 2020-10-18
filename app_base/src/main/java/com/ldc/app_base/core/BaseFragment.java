@@ -9,7 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.ldc.app_base.config.ModuleConfig;
+import com.ldc.app_base.config.ModuleAppInit;
 
 import me.jessyan.autosize.internal.CustomAdapt;
 
@@ -58,11 +58,11 @@ public abstract class BaseFragment extends Fragment implements CustomAdapt {
 
     @Override
     public boolean isBaseOnWidth() {
-        return ModuleConfig.isBaseOnWidth;
+        return ModuleAppInit.isBaseOnWidth;
     }
 
     @Override
     public float getSizeInDp() {
-        return ModuleConfig.getSizeInDp;
+        return ModuleAppInit.getSizeInDp;
     }
 }

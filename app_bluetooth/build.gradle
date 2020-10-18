@@ -3,7 +3,6 @@ if (isModuleRun.toBoolean()) {
 } else {
     apply plugin: 'com.android.application'
 }
-
 android {
     compileSdkVersion rootProject.ext.android['compileSdkVersion']
     buildToolsVersion rootProject.ext.android['buildToolsVersion']
@@ -16,15 +15,9 @@ android {
         if (!isModuleRun.toBoolean()) {
             applicationId 'com.ldc.app_bluetooth'
         }
+
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
-
-        //路由设置
-        javaCompileOptions {
-            annotationProcessorOptions {
-                arguments = [AROUTER_MODULE_NAME: project.getName()]
-            }
-        }
     }
 
     buildTypes {
@@ -33,11 +26,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
     //数据绑定
     buildFeatures {
-        viewBinding {
-            enabled = true
-        }
+        viewBinding = true
     }
 
     compileOptions {
@@ -48,9 +40,10 @@ android {
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
+    testImplementation 'junit:junit:4.13'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     //
-    implementation project(path: ':app_base')
-    //路由
-    annotationProcessor rootProject.ext.depend['arouterCompiler']
+    implementation project(path: ":app_base")
 
 }

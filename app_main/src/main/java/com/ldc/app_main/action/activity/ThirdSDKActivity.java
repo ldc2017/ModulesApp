@@ -5,14 +5,12 @@ import android.util.Log;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.alibaba.android.arouter.facade.annotation.Route;
 import com.ldc.app_base.core.BaseVBActivity;
-import com.ldc.app_base.uts.JumpUrl;
-import com.ldc.app_main.MainAppInit;
+import com.ldc.app_main.AppInit;
 import com.ldc.app_main.adapter.ThirdSdkAdapter;
 import com.ldc.app_main.databinding.ActivityThirdSdkBinding;
 
-@Route(path = JumpUrl.THIRD_SDK_URL)
+
 public class ThirdSDKActivity extends BaseVBActivity<ActivityThirdSdkBinding> {
     private ThirdSdkAdapter thirdSdkAdapter;
 
@@ -24,7 +22,7 @@ public class ThirdSDKActivity extends BaseVBActivity<ActivityThirdSdkBinding> {
     @Override
     protected void initView() {
         super.initView();
-        Log.e(TAG, String.format("initView: %s", MainAppInit.getApplication().getClass().getName()));
+        Log.e(TAG, String.format("initView: %s", AppInit.getApplication().getClass().getName()));
         initAdapter();
     }
 

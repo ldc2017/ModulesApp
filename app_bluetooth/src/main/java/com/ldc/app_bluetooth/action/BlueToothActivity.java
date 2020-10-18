@@ -1,12 +1,23 @@
 package com.ldc.app_bluetooth.action;
 
-import com.alibaba.android.arouter.facade.annotation.Route;
+import android.content.ComponentName;
+import android.content.Context;
+import android.content.Intent;
+
 import com.ldc.app_base.core.BaseVBActivity;
-import com.ldc.app_bluetooth.MyUrl;
 import com.ldc.app_bluetooth.databinding.ActivityBlueToothBinding;
 
-@Route(path = MyUrl.BlueToothActivity)
+
 public class BlueToothActivity extends BaseVBActivity<ActivityBlueToothBinding> {
+
+
+    public static void start(Context context) {
+        final ComponentName componentName = new ComponentName(context, BlueToothActivity.class);
+        Intent intent = new Intent();
+        intent.setComponent(componentName);
+        context.startActivity(intent);
+
+    }
 
 
     @Override
