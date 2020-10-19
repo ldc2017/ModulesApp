@@ -5,7 +5,7 @@ import android.os.Bundle;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.ldc.app_base.core.BaseVMFragment;
-import com.ldc.app_bluetooth.action.AppBlueToothMainActivity;
+import com.ldc.app_bluetooth.action.activity.AppBlueToothMainActivity;
 import com.ldc.app_main.action.vm.HomeVM;
 import com.ldc.app_main.databinding.FragmentHomeBinding;
 import com.ldc.app_wifi.AppWifiActivity;

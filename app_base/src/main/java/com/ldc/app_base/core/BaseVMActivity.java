@@ -1,5 +1,8 @@
 package com.ldc.app_base.core;
 
+import android.app.Application;
+
+import androidx.lifecycle.ViewModelProvider;
 import androidx.viewbinding.ViewBinding;
 
 /**
@@ -20,4 +23,11 @@ public abstract class BaseVMActivity<VM extends BaseViewModel, VB extends ViewBi
 
 
     protected abstract VM initViewModel();
+
+    //创建ViewModel
+    protected VM createViewModel(Application application, Class<VM> tClass) {
+        return ViewModelProvider.AndroidViewModelFactory
+                .getInstance(application)
+                .create(tClass);
+    }
 }

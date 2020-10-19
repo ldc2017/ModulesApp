@@ -1,8 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ll_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".action.AppBlueToothMainActivity">
+    android:orientation="vertical"
+    tools:context=".action.activity.AppBlueToothMainActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <include
+        android:id="@+id/title_bar"
+        layout="@layout/view_layout_title_bar" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/color_ededed" />
+
+    <FrameLayout
+        android:id="@+id/fl_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" />
+</LinearLayout>
