@@ -21,7 +21,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_60"
+        android:layout_height="@dimen/main_dp_60"
         android:background="@color/color_ffffff"
         android:gravity="center_vertical">
 
@@ -31,7 +31,7 @@
             android:layout_height="50dp"
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
-            android:paddingTop="@dimen/dp_5">
+            android:paddingTop="@dimen/main_dp_5">
 
             <ImageView
                 android:id="@+id/iv_home"
@@ -39,7 +39,7 @@
                 android:layout_height="@dimen/dp_23"
                 android:layout_gravity="center_horizontal"
                 android:scaleType="centerCrop"
-                android:src="@drawable/icon_home" />
+                android:src="@drawable/main_icon_home" />
 
             <TextView
                 android:id="@+id/tv_home"
@@ -49,7 +49,7 @@
                 android:layout_marginTop="5dp"
                 android:text="首页"
                 android:textColor="@color/color_8a8a8a"
-                android:textSize="@dimen/sp_13" />
+                android:textSize="@dimen/main_sp_13" />
 
         </FrameLayout>
 
@@ -59,7 +59,7 @@
             android:layout_height="50dp"
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
-            android:paddingTop="@dimen/dp_5">
+            android:paddingTop="@dimen/main_dp_5">
 
             <ImageView
                 android:id="@+id/iv_message"
@@ -67,7 +67,7 @@
                 android:layout_height="@dimen/dp_23"
                 android:layout_gravity="center_horizontal"
                 android:scaleType="centerCrop"
-                android:src="@drawable/icon_message" />
+                android:src="@drawable/main_icon_message" />
 
             <TextView
                 android:id="@+id/tv_message"
@@ -77,7 +77,7 @@
                 android:layout_marginTop="5dp"
                 android:text="消息"
                 android:textColor="@color/color_8a8a8a"
-                android:textSize="@dimen/sp_13" />
+                android:textSize="@dimen/main_sp_13" />
 
         </FrameLayout>
 
@@ -87,7 +87,7 @@
             android:layout_height="50dp"
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
-            android:paddingTop="@dimen/dp_5">
+            android:paddingTop="@dimen/main_dp_5">
 
             <ImageView
                 android:id="@+id/iv_me"
@@ -95,17 +95,17 @@
                 android:layout_height="@dimen/dp_23"
                 android:layout_gravity="center_horizontal"
                 android:scaleType="centerInside"
-                android:src="@drawable/icon_personal" />
+                android:src="@drawable/main_icon_personal" />
 
             <TextView
                 android:id="@+id/tv_me"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal|bottom"
-                android:layout_marginTop="@dimen/dp_5"
+                android:layout_marginTop="@dimen/main_dp_5"
                 android:text="个人中心"
                 android:textColor="@color/color_8a8a8a"
-                android:textSize="@dimen/sp_13" />
+                android:textSize="@dimen/main_sp_13" />
 
         </FrameLayout>
 

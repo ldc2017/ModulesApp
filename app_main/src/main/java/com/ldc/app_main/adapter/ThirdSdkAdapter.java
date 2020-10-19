@@ -13,7 +13,7 @@ import com.ldc.app_main.model.ThirdSdkBean;
  */
 public class ThirdSdkAdapter extends BaseRVAdapter<ThirdSdkBean> {
     public ThirdSdkAdapter() {
-        super(R.layout.view_item_third_sdk);
+        super(R.layout.main_view_item_third_sdk);
     }
 
     @Override

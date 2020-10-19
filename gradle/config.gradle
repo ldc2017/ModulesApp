@@ -2,6 +2,13 @@ project.ext {
 
     //渠道
     flavorDimensions = "BleApp"
+    //模块资源前缀
+    modulesRes = [
+            app          : 'app_',
+            app_main     : 'main_',
+            app_bluetooth: 'ble_',
+            app_wifi     : 'wifi_',
+    ]
     //版本
     android = [
             compileSdkVersion: 30,

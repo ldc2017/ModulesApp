@@ -5,12 +5,11 @@ import android.os.Bundle;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.ldc.app_base.core.BaseVMFragment;
-import com.ldc.app_main.R;
 import com.ldc.app_main.action.vm.MessageVM;
-import com.ldc.app_main.databinding.FragmentMessageBinding;
+import com.ldc.app_main.databinding.MainFragmentMessageBinding;
 
 
-public class MessageFragment extends BaseVMFragment<MessageVM, FragmentMessageBinding> {
+public class MessageFragment extends BaseVMFragment<MessageVM, MainFragmentMessageBinding> {
     private static final String PARAMS1 = "";
     private static final String PARAMS2 = "";
 
@@ -32,7 +31,7 @@ public class MessageFragment extends BaseVMFragment<MessageVM, FragmentMessageBi
 
 
     @Override
-    protected FragmentMessageBinding initBinding() {
-        return FragmentMessageBinding.inflate(getLayoutInflater());
+    protected MainFragmentMessageBinding initBinding() {
+        return MainFragmentMessageBinding.inflate(getLayoutInflater());
     }
 }

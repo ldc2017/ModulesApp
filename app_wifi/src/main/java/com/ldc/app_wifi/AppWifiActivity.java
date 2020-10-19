@@ -19,6 +19,6 @@ public class AppWifiActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_wifi);
+        setContentView(R.layout.wifi_activity_wifi);
     }
 }

@@ -15,18 +15,18 @@ import com.ldc.app_main.action.fragment.HomeFragment;
 import com.ldc.app_main.action.fragment.MeFragment;
 import com.ldc.app_main.action.fragment.MessageFragment;
 import com.ldc.app_main.adapter.MainAdapter;
-import com.ldc.app_main.databinding.ActivityMainBinding;
+import com.ldc.app_main.databinding.MainActivityMainBinding;
 
 import java.util.ArrayList;
 
-public class MainActivity extends BaseVBActivity<ActivityMainBinding> {
+public class MainActivity extends BaseVBActivity<MainActivityMainBinding> {
 
     private final ArrayList<Fragment> fragments = new ArrayList<>();
     private MainAdapter mainAdapter;
 
     @Override
-    protected ActivityMainBinding initBinding() {
-        return ActivityMainBinding.inflate(getLayoutInflater());
+    protected MainActivityMainBinding initBinding() {
+        return MainActivityMainBinding.inflate(getLayoutInflater());
     }
 
     @Override
@@ -94,9 +94,9 @@ public class MainActivity extends BaseVBActivity<ActivityMainBinding> {
         viewBinding.vp.setCurrentItem(pos);
         switch (pos) {
             case 0:
-                viewBinding.ivHome.setImageResource(R.drawable.icon_home_pre);
-                viewBinding.ivMessage.setImageResource(R.drawable.icon_message);
-                viewBinding.ivMe.setImageResource(R.drawable.icon_personal);
+                viewBinding.ivHome.setImageResource(R.drawable.main_icon_home_pre);
+                viewBinding.ivMessage.setImageResource(R.drawable.main_icon_message);
+                viewBinding.ivMe.setImageResource(R.drawable.main_icon_personal);
                 //
                 viewBinding.tvHome.setTextColor(getResources().getColor(R.color.color_d4237a));
                 viewBinding.tvMessage.setTextColor(getResources().getColor(R.color.color_8a8a8a));
@@ -104,18 +104,18 @@ public class MainActivity extends BaseVBActivity<ActivityMainBinding> {
                 break;
             case 1:
 
-                viewBinding.ivHome.setImageResource(R.drawable.icon_home);
-                viewBinding.ivMessage.setImageResource(R.drawable.icon_message_pre);
-                viewBinding.ivMe.setImageResource(R.drawable.icon_personal);
+                viewBinding.ivHome.setImageResource(R.drawable.main_icon_home);
+                viewBinding.ivMessage.setImageResource(R.drawable.main_icon_message_pre);
+                viewBinding.ivMe.setImageResource(R.drawable.main_icon_personal);
                 //
                 viewBinding.tvHome.setTextColor(getResources().getColor(R.color.color_8a8a8a));
                 viewBinding.tvMessage.setTextColor(getResources().getColor(R.color.color_d4237a));
                 viewBinding.tvMe.setTextColor(getResources().getColor(R.color.color_8a8a8a));
                 break;
             case 2:
-                viewBinding.ivHome.setImageResource(R.drawable.icon_home);
-                viewBinding.ivMessage.setImageResource(R.drawable.icon_message);
-                viewBinding.ivMe.setImageResource(R.drawable.icon_personal_pre);
+                viewBinding.ivHome.setImageResource(R.drawable.main_icon_home);
+                viewBinding.ivMessage.setImageResource(R.drawable.main_icon_message);
+                viewBinding.ivMe.setImageResource(R.drawable.main_icon_personal_pre);
                 //
                 viewBinding.tvHome.setTextColor(getResources().getColor(R.color.color_8a8a8a));
                 viewBinding.tvMessage.setTextColor(getResources().getColor(R.color.color_8a8a8a));

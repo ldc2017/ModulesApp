@@ -7,11 +7,11 @@ import androidx.lifecycle.ViewModelProvider;
 import com.ldc.app_base.core.BaseVMFragment;
 import com.ldc.app_bluetooth.action.activity.AppBlueToothMainActivity;
 import com.ldc.app_main.action.vm.HomeVM;
-import com.ldc.app_main.databinding.FragmentHomeBinding;
+import com.ldc.app_main.databinding.MainFragmentHomeBinding;
 import com.ldc.app_wifi.AppWifiActivity;
 
 
-public class HomeFragment extends BaseVMFragment<HomeVM, FragmentHomeBinding> {
+public class HomeFragment extends BaseVMFragment<HomeVM, MainFragmentHomeBinding> {
     private static final String PARAMS1 = "";
     private static final String PARAMS2 = "";
 
@@ -33,8 +33,8 @@ public class HomeFragment extends BaseVMFragment<HomeVM, FragmentHomeBinding> {
 
 
     @Override
-    protected FragmentHomeBinding initBinding() {
-        return FragmentHomeBinding.inflate(getLayoutInflater());
+    protected MainFragmentHomeBinding initBinding() {
+        return MainFragmentHomeBinding.inflate(getLayoutInflater());
     }
 
     @Override

@@ -5,13 +5,11 @@ import android.os.Bundle;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.ldc.app_base.core.BaseVMFragment;
-import com.ldc.app_main.R;
 import com.ldc.app_main.action.vm.MeVM;
-import com.ldc.app_main.databinding.FragmentHomeBinding;
-import com.ldc.app_main.databinding.FragmentMeBinding;
+import com.ldc.app_main.databinding.MainFragmentMeBinding;
 
 
-public class MeFragment extends BaseVMFragment<MeVM, FragmentMeBinding> {
+public class MeFragment extends BaseVMFragment<MeVM, MainFragmentMeBinding> {
     private static final String PARAMS1 = "";
     private static final String PARAMS2 = "";
 
@@ -34,7 +32,7 @@ public class MeFragment extends BaseVMFragment<MeVM, FragmentMeBinding> {
 
 
     @Override
-    protected FragmentMeBinding initBinding() {
-        return FragmentMeBinding.inflate(getLayoutInflater());
+    protected MainFragmentMeBinding initBinding() {
+        return MainFragmentMeBinding.inflate(getLayoutInflater());
     }
 }

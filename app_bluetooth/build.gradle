@@ -4,8 +4,11 @@ if (isModuleRun.toBoolean()) {
     apply plugin: 'com.android.application'
 }
 android {
-    resourcePrefix "ble_"
-
+    println("====")
+    println("模块 " + project.getName())
+    println("====")
+    resourcePrefix rootProject.ext.modulesRes[project.getName()]
+    //
     compileSdkVersion rootProject.ext.android['compileSdkVersion']
     buildToolsVersion rootProject.ext.android['buildToolsVersion']
 

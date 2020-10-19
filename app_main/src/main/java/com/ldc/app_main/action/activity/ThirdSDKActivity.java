@@ -8,15 +8,15 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.ldc.app_base.core.BaseVBActivity;
 import com.ldc.app_main.AppInit;
 import com.ldc.app_main.adapter.ThirdSdkAdapter;
-import com.ldc.app_main.databinding.ActivityThirdSdkBinding;
+import com.ldc.app_main.databinding.MainActivityThirdSdkBinding;
 
 
-public class ThirdSDKActivity extends BaseVBActivity<ActivityThirdSdkBinding> {
+public class ThirdSDKActivity extends BaseVBActivity<MainActivityThirdSdkBinding> {
     private ThirdSdkAdapter thirdSdkAdapter;
 
     @Override
-    protected ActivityThirdSdkBinding initBinding() {
-        return ActivityThirdSdkBinding.inflate(getLayoutInflater());
+    protected MainActivityThirdSdkBinding initBinding() {
+        return MainActivityThirdSdkBinding.inflate(getLayoutInflater());
     }
 
     @Override

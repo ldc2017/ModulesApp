@@ -16,6 +16,10 @@ static def buildTime() {
 }
 
 android {
+    println("====")
+    println("模块 " + project.getName())
+    println("====")
+    //
     compileSdkVersion rootProject.ext.android['compileSdkVersion']
     buildToolsVersion rootProject.ext.android['buildToolsVersion']
     defaultConfig {
