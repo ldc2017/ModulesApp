@@ -19,10 +19,10 @@ import com.ldc.app_bluetooth.R;
 import com.ldc.app_bluetooth.action.fragment.DeviceFragment;
 import com.ldc.app_bluetooth.action.fragment.MessageFragment;
 import com.ldc.app_bluetooth.action.fragment.SettingFragment;
-import com.ldc.app_bluetooth.databinding.ActivityAppBlueToothBinding;
+import com.ldc.app_bluetooth.databinding.BleActivityAppBlueToothBinding;
 
 
-public class AppBlueToothMainActivity extends BaseVBActivity<ActivityAppBlueToothBinding> {
+public class AppBlueToothMainActivity extends BaseVBActivity<BleActivityAppBlueToothBinding> {
     private Fragment currFragment = new Fragment();
 
 
@@ -36,8 +36,8 @@ public class AppBlueToothMainActivity extends BaseVBActivity<ActivityAppBlueToot
 
 
     @Override
-    protected ActivityAppBlueToothBinding initBinding() {
-        return ActivityAppBlueToothBinding.inflate(getLayoutInflater());
+    protected BleActivityAppBlueToothBinding initBinding() {
+        return BleActivityAppBlueToothBinding.inflate(getLayoutInflater());
     }
 
     @Override
@@ -57,7 +57,7 @@ public class AppBlueToothMainActivity extends BaseVBActivity<ActivityAppBlueToot
 
     //显示跟多对话框
     private void showMoreDialog() {
-        final View view = LayoutInflater.from(activity).inflate(R.layout.view_dialog_more, null, false);
+        final View view = LayoutInflater.from(activity).inflate(R.layout.ble_view_dialog_more, null, false);
         TextView tvMessage = (TextView) view.findViewById(R.id.tv_message);
         TextView tvDevice = (TextView) view.findViewById(R.id.tv_device);
         TextView tvSetting = (TextView) view.findViewById(R.id.tv_setting);

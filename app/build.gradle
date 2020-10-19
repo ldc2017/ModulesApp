@@ -90,6 +90,12 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    //重命名
+    applicationVariants.all { xiaYiYe5 ->
+        xiaYiYe5.outputs.all {
+            outputFileName = "多模块_v${defaultConfig.versionName}_${defaultConfig.versionCode}_${buildTime()}_.apk"
+        }
+    }
 
 }
 

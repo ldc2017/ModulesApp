@@ -3,11 +3,11 @@ package com.ldc.app_bluetooth.action.fragment;
 import android.os.Bundle;
 
 import com.ldc.app_base.core.BaseVMFragment;
-import com.ldc.app_bluetooth.databinding.FragmentDeviceBinding;
+import com.ldc.app_bluetooth.databinding.BleFragmentDeviceBinding;
 import com.ldc.app_bluetooth.vm.DeviceVM;
 
 
-public class DeviceFragment extends BaseVMFragment<DeviceVM, FragmentDeviceBinding> {
+public class DeviceFragment extends BaseVMFragment<DeviceVM, BleFragmentDeviceBinding> {
     public static DeviceFragment newInstance() {
         Bundle args = new Bundle();
         DeviceFragment fragment = new DeviceFragment();
@@ -22,7 +22,7 @@ public class DeviceFragment extends BaseVMFragment<DeviceVM, FragmentDeviceBindi
     }
 
     @Override
-    protected FragmentDeviceBinding initBinding() {
-        return FragmentDeviceBinding.inflate(getLayoutInflater());
+    protected BleFragmentDeviceBinding initBinding() {
+        return BleFragmentDeviceBinding.inflate(getLayoutInflater());
     }
 }

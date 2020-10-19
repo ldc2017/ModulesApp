@@ -3,11 +3,11 @@ package com.ldc.app_bluetooth.action.fragment;
 import android.os.Bundle;
 
 import com.ldc.app_base.core.BaseVMFragment;
-import com.ldc.app_bluetooth.databinding.FragmentSettingBinding;
+import com.ldc.app_bluetooth.databinding.BleFragmentSettingBinding;
 import com.ldc.app_bluetooth.vm.SettingVM;
 
 
-public class SettingFragment extends BaseVMFragment<SettingVM, FragmentSettingBinding> {
+public class SettingFragment extends BaseVMFragment<SettingVM, BleFragmentSettingBinding> {
     public static SettingFragment newInstance() {
         Bundle args = new Bundle();
         SettingFragment fragment = new SettingFragment();
@@ -21,7 +21,7 @@ public class SettingFragment extends BaseVMFragment<SettingVM, FragmentSettingBi
     }
 
     @Override
-    protected FragmentSettingBinding initBinding() {
-        return FragmentSettingBinding.inflate(getLayoutInflater());
+    protected BleFragmentSettingBinding initBinding() {
+        return BleFragmentSettingBinding.inflate(getLayoutInflater());
     }
 }

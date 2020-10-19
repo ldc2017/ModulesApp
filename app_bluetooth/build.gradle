@@ -4,6 +4,8 @@ if (isModuleRun.toBoolean()) {
     apply plugin: 'com.android.application'
 }
 android {
+    resourcePrefix "ble_"
+
     compileSdkVersion rootProject.ext.android['compileSdkVersion']
     buildToolsVersion rootProject.ext.android['buildToolsVersion']
 

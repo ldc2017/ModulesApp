@@ -1,7 +1,5 @@
 package com.ldc.app_main.adapter;
 
-import android.view.View;
-
 import com.ldc.app_base.core.BaseRVAdapter;
 import com.ldc.app_base.core.BaseRVViewHolder;
 import com.ldc.app_main.R;
