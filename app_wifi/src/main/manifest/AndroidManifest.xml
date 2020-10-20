@@ -3,6 +3,7 @@
     package="com.ldc.app_wifi">
 
     <application
+        android:name=".AppInit"
         android:label="@string/wifi_app_name"
         android:theme="@style/AppTheme">
         <activity android:name=".AppWifiActivity">

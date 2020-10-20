@@ -9,9 +9,10 @@ package com.ldc.app_base.config;
 public final class ModuleAppInit {
     private static final String MAIN_APPLICATION = "com.ldc.app_main.AppInit";
     private static final String BLUETOOTH_APPLICATION = "com.ldc.app_bluetooth.AppInit";
+    private static final String WIFI_APPLICATION = "com.ldc.app_wifi.AppInit";
     public static String[] modulesInit = {
             MAIN_APPLICATION,
-            BLUETOOTH_APPLICATION,
+            BLUETOOTH_APPLICATION, WIFI_APPLICATION,
     };
     //autoSize
     public static final float getSizeInDp = 667;

@@ -1,6 +1,6 @@
-package com.ldc.bleapp;
+package com.ldc.app;
 
-import com.ldc.app_base.BaseApplication;
+import com.ldc.app_base.CommonApplication;
 
 /**
  * 项目: BleApp
@@ -8,7 +8,7 @@ import com.ldc.app_base.BaseApplication;
  * 作者: liudi
  * 创建时间: 2020/10/10
  */
-public class MainRun extends BaseApplication {
+public class MainRun extends CommonApplication {
 
     @Override
     public void onCreate() {

@@ -2,7 +2,7 @@ package com.ldc.app_main;
 
 import android.app.Application;
 
-import com.ldc.app_base.init.BaseAppInit;
+import com.ldc.app_base.CommonApplication;
 
 /**
  * 项目: BleApp
@@ -10,7 +10,7 @@ import com.ldc.app_base.init.BaseAppInit;
  * 作者: liudi
  * 创建时间: 2020/10/10
  */
-public class AppInit implements BaseAppInit {
+public class AppInit extends CommonApplication {
     private static Application application;
 
     public static Application getApplication() {
@@ -18,13 +18,14 @@ public class AppInit implements BaseAppInit {
     }
 
 
-    /**
-     * @param app
-     * @return
-     */
     @Override
-    public boolean init(Application app) {
-        application = app;
-        return true;
+    public void onCreate() {
+        super.onCreate();
+        application = this;
+    }
+
+    @Override
+    protected void init(Application app) {
+        application =  app;
     }
 }
