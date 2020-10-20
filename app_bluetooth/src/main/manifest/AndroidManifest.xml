@@ -3,6 +3,7 @@
     package="com.ldc.app_bluetooth">
 
     <application
+        android:name="com.ldc.app_base.BaseApplication"
         android:label="@string/ble_app_name"
         android:theme="@style/AppTheme">
         <activity android:name=".action.activity.AppBlueToothMainActivity">

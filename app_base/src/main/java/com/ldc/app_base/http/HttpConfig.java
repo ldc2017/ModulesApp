@@ -6,6 +6,8 @@ package com.ldc.app_base.http;
  * 作者: liudi
  * 创建时间: 2020/10/13
  */
-public final class ApiConfig {
+public final class HttpConfig {
     public static final String base_url = "";
+
+
 }

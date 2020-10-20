@@ -22,19 +22,20 @@ project.ext {
     //依赖
     depend = [
             //common
-            appcompat             : "androidx.appcompat:appcompat:1.2.0",
-            constraintlayout      : "androidx.constraintlayout:constraintlayout:2.0.2",
-            supportV4             : "androidx.legacy:legacy-support-v4:1.0.0",
-            recyclerview          : "androidx.recyclerview:recyclerview:1.1.0",
-            multidex              : "com.android.support:multidex:1.0.3",
+            appcompat                : "androidx.appcompat:appcompat:1.2.0",
+            constraintlayout         : "androidx.constraintlayout:constraintlayout:2.0.2",
+            supportV4                : "androidx.legacy:legacy-support-v4:1.0.0",
+            recyclerview             : "androidx.recyclerview:recyclerview:1.1.0",
+            multidex                 : "com.android.support:multidex:1.0.3",
             //
-            utilcodex             : 'com.blankj:utilcodex:1.29.0',
+            utilcodex                : 'com.blankj:utilcodex:1.29.0',
             //屏幕适配
-            autoSize              : 'me.jessyan:autosize:1.2.1',
+            autoSize                 : 'me.jessyan:autosize:1.2.1',
             //网络
-            retrofit2ConverterGson: 'com.squareup.retrofit2:converter-gson:2.9.0',
-            retrofit2             : 'com.squareup.retrofit2:retrofit:2.9.0',
-            retrofit2RxJava2      : 'com.squareup.retrofit2:adapter-rxjava2:2.9.0',
+            retrofit2ConverterGson   : 'com.squareup.retrofit2:converter-gson:2.9.0',
+            retrofit2                : 'com.squareup.retrofit2:retrofit:2.9.0',
+            retrofit2RxJava2         : 'com.squareup.retrofit2:adapter-rxjava2:2.9.0',
+            okhttp3LoggingInterceptor: 'com.squareup.okhttp3:logging-interceptor:4.8.0',
 
 
     ]

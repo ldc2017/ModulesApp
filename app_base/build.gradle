@@ -48,6 +48,7 @@ dependencies {
     api rootProject.ext.depend['retrofit2']
     api rootProject.ext.depend['retrofit2ConverterGson']
     api rootProject.ext.depend['retrofit2RxJava2']
+    api rootProject.ext.depend['okhttp3LoggingInterceptor']
 
 }
 
