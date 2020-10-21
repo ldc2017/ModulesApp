@@ -1,5 +1,6 @@
 package com.ldc.app_bluetooth.action.activity;
 
+import android.bluetooth.BluetoothAdapter;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
@@ -24,6 +25,7 @@ import com.ldc.app_bluetooth.databinding.BleActivityAppBlueToothBinding;
 
 public class AppBlueToothMainActivity extends BaseVBActivity<BleActivityAppBlueToothBinding> {
     private Fragment currFragment = new Fragment();
+    private BluetoothAdapter bluetoothAdapter = null;
 
 
     public static void start(Context context) {
@@ -43,6 +45,8 @@ public class AppBlueToothMainActivity extends BaseVBActivity<BleActivityAppBlueT
     @Override
     protected void initView() {
         super.initView();
+        //
+        bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
         //默认消息页面
         switchFragment(MessageFragment.newInstance());
         //
@@ -53,6 +57,33 @@ public class AppBlueToothMainActivity extends BaseVBActivity<BleActivityAppBlueT
         viewBinding.titleBar.llRight.setOnClickListener(v -> {
             showMoreDialog();
         });
+        if (null == bluetoothAdapter) {
+            viewBinding.llLayout.postDelayed(() -> {
+                showMessage("知道了", "设备不支持蓝牙通讯", new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        finish();
+                    }
+                });
+            }, 500);
+        }
+    }
+
+
+    //切换页面
+    private void switchFragment(Fragment target) {
+        if (currFragment == target) return;
+        final FragmentTransaction beginTransaction = getSupportFragmentManager().beginTransaction();
+        if (null != currFragment) {
+            beginTransaction.hide(currFragment);
+        }
+        if (target.isAdded()) {
+            beginTransaction.show(target);
+        } else {
+            beginTransaction.add(viewBinding.flFragment.getId(), target, target.getClass().getName());
+        }
+        beginTransaction.commit();
+        currFragment = target;
     }
 
     //显示跟多对话框
@@ -93,21 +124,28 @@ public class AppBlueToothMainActivity extends BaseVBActivity<BleActivityAppBlueT
         tvSetting.setOnClickListener(onClickListener);
     }
 
-
-    //切换页面
-    private void switchFragment(Fragment target) {
-        if (currFragment == target) return;
-        final FragmentTransaction beginTransaction = getSupportFragmentManager().beginTransaction();
-        if (null != currFragment) {
-            beginTransaction.hide(currFragment);
-        }
-        if (target.isAdded()) {
-            beginTransaction.show(target);
-        } else {
-            beginTransaction.add(viewBinding.flFragment.getId(), target, target.getClass().getName());
-        }
-        beginTransaction.commit();
-        currFragment = target;
+    //提示
+    private void showMessage(String btn_text, String msg, View.OnClickListener clickListener) {
+        final View view = LayoutInflater.from(activity).inflate(R.layout.view_dialog_tip, null, false);
+        //
+        PopupWindow popupWindow = new PopupWindow(activity);
+        popupWindow.setContentView(view);
+        popupWindow.setHeight(ViewGroup.LayoutParams.MATCH_PARENT);
+        popupWindow.setWidth(ViewGroup.LayoutParams.MATCH_PARENT);
+        popupWindow.setBackgroundDrawable(new ColorDrawable(0x00000000));
+        popupWindow.setOutsideTouchable(false);
+        popupWindow.showAtLocation(viewBinding.llLayout, Gravity.NO_GRAVITY, 0, 0);
+        //
+        TextView tvMessage = view.findViewById(R.id.tv_message);
+        TextView tvBtn = view.findViewById(R.id.tv_btn);
+        tvMessage.setText(String.format("%s", msg));
+        tvBtn.setText(String.format("%s", btn_text));
+        tvBtn.setOnClickListener(v -> {
+            popupWindow.dismiss();
+            if (null != clickListener) {
+                clickListener.onClick(v);
+            }
+        });
 
 
     }

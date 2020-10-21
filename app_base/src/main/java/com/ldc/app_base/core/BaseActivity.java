@@ -61,6 +61,7 @@ public abstract class BaseActivity extends AppCompatActivity implements CustomAd
     }
 
     protected void initError(Exception e) {
+        System.err.println(String.format("【 异常 】========== %s", e.getMessage()));
         e.printStackTrace();
     }
 

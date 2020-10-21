@@ -2,14 +2,15 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/color_21000000">
+    android:background="@color/color_21000000"
+    android:elevation="@dimen/dp_10">
 
     <LinearLayout
         android:layout_width="@dimen/dp_120"
         android:layout_height="wrap_content"
         android:layout_gravity="top|end"
-        android:layout_marginEnd="@dimen/dp_1"
         android:layout_marginTop="@dimen/dp_44"
+        android:layout_marginEnd="@dimen/dp_1"
         android:background="@color/ble_color_white"
         android:minWidth="100dp"
         android:minHeight="@dimen/dp_100"

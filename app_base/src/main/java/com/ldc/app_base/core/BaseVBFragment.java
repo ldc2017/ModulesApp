@@ -52,6 +52,7 @@ public abstract class BaseVBFragment<VB extends ViewBinding> extends Fragment im
     }
 
     protected void initError(Exception e) {
+        System.err.println(String.format("【 异常 】========== %s", e.getMessage()));
         e.printStackTrace();
     }
 

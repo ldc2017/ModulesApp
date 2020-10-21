@@ -64,6 +64,7 @@ public abstract class BaseVBActivity<VB extends ViewBinding> extends AppCompatAc
     }
 
     protected void initError(Exception e) {
+        System.err.println(String.format("【 异常 】========== %s", e.getMessage()));
         e.printStackTrace();
     }
 
