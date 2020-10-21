@@ -49,6 +49,11 @@ dependencies {
     api rootProject.ext.depend['retrofit2ConverterGson']
     api rootProject.ext.depend['retrofit2RxJava2']
     api rootProject.ext.depend['okhttp3LoggingInterceptor']
+    //
+    api rootProject.ext.depend['refreshLayoutKernel']     //核心必须依赖
+    api rootProject.ext.depend['refreshHeaderClassics']  //经典刷新头
+    api rootProject.ext.depend['refreshLayoutMaterial']   //谷歌刷新头
+    api rootProject.ext.depend['refreshFooterClassics']   //经典加载
 
 }
 
